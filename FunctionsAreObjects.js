@@ -58,4 +58,18 @@ obj.hobbies.hobby1 = "basketball";
 console.log(clonedObj.hobbies.hobby1); //football
 console.log(obj.hobbies.hobby1);//basketball
 
+//Given an object in input, return a function that carries all the key value pairs in the input object, and returns the total number of keys in the input object when invoked. 
+const countKeys = (obj) => {
+    let count = 0;
+    for(let key in obj) {
+        if(typeof obj[key]==='object' && obj[key]!=null) {
+            count += countKeys(obj[key]);
+        }
+        count += 1;
+    }
+    return count;
+}
+console.log(countKeys(obj));
+
+
 
