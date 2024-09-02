@@ -11,3 +11,24 @@ const multiply = (integer,b) => {
 }
 console.log(multiply(integer,b));
 
+//Given an array of functions, invoke all of them sequentially, return an array with return value of each function in the same order.
+function multiply(){
+    return a*b;
+}
+function add(){
+    return a+b;
+}
+function divide(){
+    return a/b;
+}
+function subtract(){
+    return a-b;
+}
+const arrayOfFuncs = [multiply,add,divide,subtract];
+const resultArray = [];
+for(funcs of arrayOfFuncs) {
+    resultArray.push(funcs());
+}
+console.log(resultArray);
+
+
