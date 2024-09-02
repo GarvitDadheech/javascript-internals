@@ -31,4 +31,31 @@ for(funcs of arrayOfFuncs) {
 }
 console.log(resultArray);
 
+//Given an object in input, return deep clone of the object.
+const obj = {
+    name: "Garvit",
+    city: "Kankroli",
+    state: "Rajasthan",
+    hobbies: {
+        hobby1: "football",
+        hobby2: "geopolitics"
+    }
+}
+const deepClone = (obj) => {
+    let clone = {};
+    for (let key in obj) {
+        if (typeof obj[key] === 'object' && obj[key] !== null) {
+            clone[key] = deepClone(obj[key]);
+        } else {
+            clone[key] = obj[key];
+        }
+    }
+    return clone;
+}
+const clonedObj = deepClone(obj);
+console.log(clonedObj);
+obj.hobbies.hobby1 = "basketball";
+console.log(clonedObj.hobbies.hobby1); //football
+console.log(obj.hobbies.hobby1);//basketball
+
 
