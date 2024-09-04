@@ -77,7 +77,7 @@ function outerFunction() {
 //Debouncing: Handling Shaky Hands and Rapid Button Clicks
 function debounce(func, delay) {
     let timeoutId;
-    
+
     return function(...args) {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
@@ -93,4 +93,15 @@ console.log('Button clicked');
 const debouncedClickHandler = debounce(handleClick, 300);
 
 document.getElementById('clickButton').addEventListener('click', debouncedClickHandler);
+
+//Function Factories - Closures can be used to create functions with preset arguments or behavior.
+function createAdder(x) {
+    return function(y) {
+      return x + y;
+    };
+  }
+  
+  const add5 = createAdder(5);
+  console.log(add5(10)); // 15
+  
   
