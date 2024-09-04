@@ -14,3 +14,18 @@ function outerFunction() {
   const myClosure = outerFunction();
   myClosure(); // Output: 'I am from the outer scope'
 
+  //Scope refers to the visibility or accessibility of variables within a program. JavaScript has three types of scope:
+  //Global(globally available), functional(in functions), block(if-else,etc.)
+
+
+  //Context refers to the value of this within a function, which depends on how the function is called. 
+  //The this keyword refers to the object that is currently executing the code.
+  const person = {
+    name: 'John',
+    sayName: function() {
+      console.log(this.name);
+    }
+  };
+  
+  person.sayName(); // Output: John
+  
