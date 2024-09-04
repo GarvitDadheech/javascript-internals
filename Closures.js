@@ -74,3 +74,23 @@ function outerFunction() {
 // </script>
 //In this example, clickCounter is a closure that retains access to clickCount, even after createClickCounter has finished executing.
 
+//Debouncing: Handling Shaky Hands and Rapid Button Clicks
+function debounce(func, delay) {
+    let timeoutId;
+    
+    return function(...args) {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
+  
+function handleClick() {
+console.log('Button clicked');
+}
+
+const debouncedClickHandler = debounce(handleClick, 300);
+
+document.getElementById('clickButton').addEventListener('click', debouncedClickHandler);
+  
