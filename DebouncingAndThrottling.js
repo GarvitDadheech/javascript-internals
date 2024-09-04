@@ -23,3 +23,19 @@ const betterFunction = myDebounce(getData,1000);
 //In this case:
 //...args inside the return function(...args) will be [1, 2, 3].
 //When cb(...args) is called, it effectively becomes getData(1, 2, 3).
+
+
+//Throttling - Throttling ensures that a function is executed at most once every specified period.
+const myThrottle = (cb,delay) => {
+    return function(...args) {
+        document.getElementById('button').disabled = true;
+        setTimeout(() => {
+            cb();
+        },delay);
+    }
+}
+
+const newFunc = myThrottle(() => {
+    document.getElementById('button').disabled = false;
+    console.log("User clicked");
+},delay);
