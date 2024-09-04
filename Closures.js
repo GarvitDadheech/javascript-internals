@@ -57,3 +57,20 @@ function outerFunction() {
   console.log(myCounter.count); // undefined (count is private)
   //In this example, count is private and can only be accessed through the functions increment, decrement, and getCount, all of which are closures.
 
+//Implementing a Click Counter
+//<button id="clickButton">Click me!</button>
+//<script> 
+  function createClickCounter() {
+    let clickCount = 0;
+
+    return function() {
+      clickCount++;
+      console.log(`Button clicked ${clickCount} times`);
+    };
+  }
+
+  const clickCounter = createClickCounter();
+  document.getElementById('clickButton').addEventListener('click', clickCounter);
+// </script>
+//In this example, clickCounter is a closure that retains access to clickCount, even after createClickCounter has finished executing.
+
