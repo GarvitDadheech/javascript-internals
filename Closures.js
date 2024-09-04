@@ -29,3 +29,31 @@ function outerFunction() {
   
   person.sayName(); // Output: John
   
+
+
+  //Data Encapsulation Using Closures
+  function counter() {
+    let count = 0;
+  
+    return {
+      increment: function() {
+        count++;
+        return count;
+      },
+      decrement: function() {
+        count--;
+        return count;
+      },
+      getCount: function() {
+        return count;
+      }
+    };
+  }
+  
+  const myCounter = counter();
+  console.log(myCounter.increment()); // 1
+  console.log(myCounter.increment()); // 2
+  console.log(myCounter.getCount());  // 2
+  console.log(myCounter.count); // undefined (count is private)
+  //In this example, count is private and can only be accessed through the functions increment, decrement, and getCount, all of which are closures.
+
