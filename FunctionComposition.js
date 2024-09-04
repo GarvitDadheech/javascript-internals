@@ -25,4 +25,3 @@ const compose = (...functions) => x =>
 
 const composedFunc = compose(add, multiply,subtract);
 console.log(composedFunc(4)); // Output: 6
-
