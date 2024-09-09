@@ -47,6 +47,19 @@ Array.prototype.hii = function() {
     console.log("Garvit says HIII!");
 }
 
-arr.hii();
+// arr.hii();
 //states.hii(); -> this will give error as siblings do not share the prototypes with each other.
 
+//Inheritance using prototype
+const papa = {
+    name: "parent",
+    age: "36",
+    color: "black"
+}
+const beta = {
+    name :"child",
+    age: "11",
+    __proto__ : papa
+}
+// beta inherits the color from papa, even tho color of beta is not defined.
+console.log(beta.color);
