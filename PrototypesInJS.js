@@ -20,5 +20,26 @@ createUser.prototype.print = function() {
 // the new keyword initiates the new object and then newly created object gets linked with prototype property of constructor function.
 // this means that now it has access to properties and methods defined on constructor's prototype.
 const user = new createUser("Garvit",20);
-user.print();
+// user.print();
+
+// user.increment();
+// console.log(user.score);
+
+// Creating prototype in Object
+Object.prototype.hello = function() {
+    console.log("Garvit says Hello!");
+}
+
+let states = {
+    Rajasthan: "Largest",
+    Goa: "Smallest"
+}
+
+let arr = [1,2,3];
+
+arr.hello();
+states.hello();
+
+//so if we assign a prototype of Object then it assigns to all the objects that are present in JavaScript,
+// as object class is on top of the chain.
 
