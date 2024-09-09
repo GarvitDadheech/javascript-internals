@@ -63,3 +63,15 @@ const beta = {
 }
 // beta inherits the color from papa, even tho color of beta is not defined.
 console.log(beta.color);
+
+//__proto__ is an old syntax.
+
+
+const beti = {
+    name: "child2",
+    age: "9"
+}
+// below is a newer syntax which does the same thing under the hood.
+Object.setPrototypeOf(beti,papa);
+console.log(beti.color);
+
