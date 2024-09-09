@@ -75,10 +75,33 @@ const beti = {
 Object.setPrototypeOf(beti,papa);
 // console.log(beti.color);
 
-// Making some functions.
+// Making some custom methods now.
 //String should have method of removing all spaces from front and back & then return the length of String.
 
 String.prototype.getRealLength = function() {
     return (this.trim().length);
 }
 console.log("    Garvit     ".getRealLength());
+
+function beget(obj) {
+    // Write your code here
+    const help = function() {
+    }
+    help.__proto__ = obj;
+    return help;
+}
+const parentObject = { a: 1, b: 2 };
+const childObject = beget(parentObject);
+
+console.log(childObject.a);
+console.log(childObject.b);
+console.log(childObject.hasOwnProperty('a'));
+
+Number.prototype.integer = function() {
+    console.log(this);
+};
+
+// (3.33).integer()
+// when we do this then we get in console [Number: 3.33] and if we only want to print value of number then we can do this.valueOf()
+//Primitive Wrapper Objects: In JavaScript, primitive types like numbers, strings, and booleans are 
+//automatically wrapped in their object equivalents when methods are called on them.
