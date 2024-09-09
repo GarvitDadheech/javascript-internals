@@ -62,7 +62,7 @@ const beta = {
     __proto__ : papa
 }
 // beta inherits the color from papa, even tho color of beta is not defined.
-console.log(beta.color);
+// console.log(beta.color);
 
 //__proto__ is an old syntax.
 
@@ -73,5 +73,12 @@ const beti = {
 }
 // below is a newer syntax which does the same thing under the hood.
 Object.setPrototypeOf(beti,papa);
-console.log(beti.color);
+// console.log(beti.color);
 
+// Making some functions.
+//String should have method of removing all spaces from front and back & then return the length of String.
+
+String.prototype.getRealLength = function() {
+    return (this.trim().length);
+}
+console.log("    Garvit     ".getRealLength());
