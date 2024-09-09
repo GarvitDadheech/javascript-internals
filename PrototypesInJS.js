@@ -37,9 +37,16 @@ let states = {
 
 let arr = [1,2,3];
 
-arr.hello();
-states.hello();
+// arr.hello();
+// states.hello();
 
 //so if we assign a prototype of Object then it assigns to all the objects that are present in JavaScript,
 // as object class is on top of the chain.
+
+Array.prototype.hii = function() {
+    console.log("Garvit says HIII!");
+}
+
+arr.hii();
+//states.hii(); -> this will give error as siblings do not share the prototypes with each other.
 
